@@ -15,7 +15,8 @@
       "@/*": ["./src/*"]
     },
     "allowImportingTsExtensions": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": ["scripts/**/*", "src/**/*"],
   "exclude": ["node_modules"]
