@@ -1,10 +1,14 @@
 // src/types/index.ts
 
-export interface Mix {
+export interface Ingredient {
   id: string;
   name: string;
-  ingredients: MixIngredient[];
-  created_at?: string;
+  total_quantity: number;
+  available_quantity: number;
+  created_at: string;
+  updated_at: string;
+  unit?: string;
+  price?: number;
 }
 
 export interface MixIngredient {
@@ -12,6 +16,18 @@ export interface MixIngredient {
   ingredient_id: string;
   mix_id: string;
   quantity: number;
+  ingredients?: {
+    id: string;
+    name: string;
+  };
+}
+
+export interface Mix {
+  id: string;
+  name: string;
+  created_at: string;
+  updated_at: string;
+  mix_ingredients?: MixIngredient[];
 }
 
 export interface Production {
@@ -36,14 +52,6 @@ export interface Purchase {
   quantity: number;
   price: number;
   created_at: string;
-}
-
-export interface Ingredient {
-  id: string;
-  name: string;
-  unit: string;
-  quantity: number;
-  price: number;
 }
 
 export interface Note {
