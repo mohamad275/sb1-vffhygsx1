@@ -22,7 +22,7 @@ const EMAIL_CONFIG = {
 };
 
 // دالة لإرسال البريد الإلكتروني
-const sendEmailWithPDFLink = async (pdfUrl: string, recipientEmail: string) => {
+const sendEmailWithPDFLink = async (pdfUrl, recipientEmail) => {
   try {
     const emailParams = {
       to_email: recipientEmail,
