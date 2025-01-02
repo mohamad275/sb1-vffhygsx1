@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "
+barber-1cb72" // Replace with your Firebase project ID
+  }
+}

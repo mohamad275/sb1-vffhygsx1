@@ -1,0 +1,10 @@
+{
+  "crons": [{
+    "name": "daily-report",
+    "schedule": "0 5 * * *",
+    "job": {
+      "name": "automated-report",
+      "http_method": "POST"
+    }
+  }]
+}
