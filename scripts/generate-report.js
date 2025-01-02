@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 require('ts-node').register();
 
 // استيراد الملف TypeScript
-import { exportToPDF } from './src/utils/reports/pdfExporter';
+import { exportToPDF } from '../src/utils/reports/pdfExporter';
 import { format } from 'date-fns';
 import { ar } from 'date-fns/locale';
 
