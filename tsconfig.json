@@ -8,13 +8,17 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "commonjs",
+    "module": "ES2020",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "outDir": "./dist",
-    "moduleResolution": "node"
+    "outDir": "./dist"
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
   },
   "include": ["scripts/**/*", "src/**/*"],
   "exclude": ["node_modules"]
