@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { exportToPDF } from '../src/utils/reports/pdfExporter.ts';
+import { exportToPDF } from '../src/utils/reports/pdfExporter';
 import { format } from 'date-fns';
 import { ar } from 'date-fns/locale';
 
