@@ -1,11 +1,20 @@
-// generate-report.ts
 import { createClient } from '@supabase/supabase-js';
-require('ts-node').register();
+import { register } from 'ts-node';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-// Import the TypeScript file using require
-const { exportToPDF } = require('../src/utils/reports/pdfExporter.ts');
+// Register ts-node
+register({
+  esm: true,
+  experimentalSpecifierResolution: 'node'
+});
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Now import the TypeScript file
+import { exportToPDF } from '../src/utils/reports/pdfExporter.js';  // Note: change .ts to .js
 import { format } from 'date-fns';
-import { ar } from 'date-fns/locale';
 
 const supabase = createClient(
   process.env.VITE_SUPABASE_URL,
