@@ -29,4 +29,4 @@ jobs:
         run: npx tsc
         
       - name: Generate Report
-        run: node scripts/generate-report.ts
+        run: node scripts/generate-report.js
