@@ -12,6 +12,7 @@ jobs:
     env:
       VITE_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       VITE_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      NODE_OPTIONS: --experimental-specifier-resolution=node --loader ts-node/esm
 
     steps:
       - uses: actions/checkout@v3
@@ -27,7 +28,5 @@ jobs:
       - name: Install TypeScript and ts-node
         run: npm install typescript ts-node @types/node --save-dev
         
-      
-        
       - name: Generate Report
-        run: node scripts/generate-report.js
+        run: node --experimental-specifier-resolution=node --loader ts-node/esm scripts/generate-report.js
