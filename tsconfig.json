@@ -5,3 +5,17 @@
     { "path": "./tsconfig.node.json" }
   ]
 }
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "outDir": "./dist",
+    "moduleResolution": "node"
+  },
+  "include": ["scripts/**/*", "src/**/*"],
+  "exclude": ["node_modules"]
+}
