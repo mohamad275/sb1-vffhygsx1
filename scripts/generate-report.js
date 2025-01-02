@@ -1,15 +1,12 @@
+// generate-report.ts
 import { createClient } from '@supabase/supabase-js';
-
-require('ts-node').register();
-
-// استيراد الملف TypeScript
-import { exportToPDF } from '../src/utils/reports/pdfExporter.ts';
+import { exportToPDF } from '../src/utils/reports/pdfExporter';
 import { format } from 'date-fns';
 import { ar } from 'date-fns/locale';
 
 const supabase = createClient(
-  process.env.VITE_SUPABASE_URL,
-  process.env.VITE_SUPABASE_ANON_KEY
+  process.env.VITE_SUPABASE_URL!,
+  process.env.VITE_SUPABASE_ANON_KEY!
 );
 
 async function generateDailyReport() {
