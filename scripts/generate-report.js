@@ -1,6 +1,9 @@
 // generate-report.ts
 import { createClient } from '@supabase/supabase-js';
-import { exportToPDF } from '../src/utils/reports/pdfExporter';
+require('ts-node').register();
+
+// Import the TypeScript file using require
+const { exportToPDF } = require('../src/utils/reports/pdfExporter.ts');
 import { format } from 'date-fns';
 import { ar } from 'date-fns/locale';
 
