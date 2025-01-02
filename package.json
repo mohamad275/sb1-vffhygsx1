@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "firebase": "firebase"
+    "firebase": "firebase",
     "clean": "rm -rf dist/",
     "build:report": "npm run clean && npx vite build && tsc -p tsconfig.build.json",
     "generate-report": "node --experimental-modules scripts/generate-report.js"
