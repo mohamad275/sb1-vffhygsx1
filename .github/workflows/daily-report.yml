@@ -27,8 +27,7 @@ jobs:
       - name: Install TypeScript and ts-node
         run: npm install typescript ts-node @types/node --save-dev
         
-      - name: Compile TypeScript
-        run: npx tsc scripts/generate-report.ts --esModuleInterop true
+      
         
       - name: Generate Report
         run: node scripts/generate-report.js
