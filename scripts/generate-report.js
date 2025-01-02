@@ -8,8 +8,8 @@ import { format } from 'date-fns';
 import { ar } from 'date-fns/locale';
 
 const supabase = createClient(
-  process.env.VITE_SUPABASE_URL!,
-  process.env.VITE_SUPABASE_ANON_KEY!
+  process.env.VITE_SUPABASE_URL,
+  process.env.VITE_SUPABASE_ANON_KEY
 );
 
 async function generateDailyReport() {
