@@ -1,8 +1,9 @@
 name: Daily Report Generation
+
 on:
   schedule:
-    - cron: '55 20 * * *'
-  workflow_dispatch:
+    - cron: '17 3 * * *'  # Run at 5:00 AM every day
+  workflow_dispatch:      # Allow manual trigger
 
 jobs:
   generate-report:
@@ -12,6 +13,7 @@ jobs:
       VITE_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       VITE_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       
+
     steps:
       - uses: actions/checkout@v3
       
@@ -23,17 +25,5 @@ jobs:
       - name: Install Dependencies
         run: npm ci
         
-      - name: Build TypeScript
-        run: |
-          rm -rf dist/
-          npx tsc -p tsconfig.build.json --traceResolution
-        
-      - name: Check Compiled Files
-        run: |
-          echo "Content of dist directory:"
-          ls -R dist/
-          echo "Content of pdfExporter.js:"
-          cat dist/utils/reports/pdfExporter.js
-          
       - name: Generate Report
         run: node scripts/generate-report.js
