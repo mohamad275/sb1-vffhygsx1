@@ -12,8 +12,8 @@
     "logs": "firebase functions:log",
     "firebase": "firebase"
     "clean": "rm -rf dist/",
-    "build:report": "npm run clean && tsc -p tsconfig.build.json",
-    "generate-report": "npm run build:report && node scripts/generate-report.js"
+    "build:report": "npm run clean && npx vite build && tsc -p tsconfig.build.json",
+    "generate-report": "node --experimental-modules scripts/generate-report.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
