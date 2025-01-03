@@ -23,7 +23,7 @@
   },
   "include": [
     "vite.config.ts",
-    "src/*/.ts", // تضمين جميع ملفات TypeScript في src
+    "src/**/*.ts", // تضمين جميع ملفات TypeScript في src
     "scripts/*/.ts" // تضمين السكربتات
   ]
 }
