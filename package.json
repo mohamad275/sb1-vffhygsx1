@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "firebase deploy --only functions",
-    "generate-report": "ts-node -r ts-node/register scripts/generate-report.js",
+    "generate-report": "ts-node --loader ts-node/esm scripts/generate-report.js",
     "logs": "firebase functions:log",
     "firebase": "firebase"
   },
