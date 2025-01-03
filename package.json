@@ -2,7 +2,7 @@
   "name": "modern-feed-solutions",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "cjs",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
