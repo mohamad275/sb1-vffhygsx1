@@ -29,12 +29,4 @@ jobs:
       - name: Generate Daily Report
         run: npm run generate-report
 
-      - name: Commit and Push PDF
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/*.pdf
-          git commit -m "Daily Report for $(date +'%Y-%m-%d')"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
