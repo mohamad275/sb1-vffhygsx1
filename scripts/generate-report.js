@@ -1,6 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import 'ts-node/esm';
-import { exportToPDF } from '../src/utils/reports/pdfExporter.ts';
+import { exportToPDF } from '../src/utils/reports/pdfExporter.js';
 import { format } from 'date-fns';
 import { ar } from 'date-fns/locale';
 
