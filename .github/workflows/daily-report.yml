@@ -1,32 +1,29 @@
-name: Generate Daily Report
+name: Daily Report Generation
 
 on:
   schedule:
-    - cron: '14 9 * * *' # تشغيل يوميًا الساعة 9:14 صباحًا بالتوقيت UTC
-  workflow_dispatch: # للسماح بالتشغيل اليدوي
+    - cron: '17 3 * * *'  # Run at 5:00 AM every day
+  workflow_dispatch:      # Allow manual trigger
 
 jobs:
   generate-report:
     runs-on: ubuntu-latest
+    
+    env:
+      VITE_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      VITE_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
+      
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # تأكد من أن إصدار Node.js يتوافق مع مشروعك
-
+          node-version: '18'
+          
       - name: Install Dependencies
-        run: npm install
-
-      - name: Setup Environment Variables
-        env:
-          VITE_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-
-      - name: Generate Daily Report
-        run: npm run generate-report
-
-      
+        run: npm ci
+        
+      - name: Generate Report
+        run: node scripts/generate-report.js
