@@ -28,6 +28,9 @@ jobs:
       - name: Setup TypeScript
         run: npm install -g typescript
 
+      - name: Install TypeScript and ts-node
+        run: npm install typescript ts-node --save-dev
+
       - name: Compile TypeScript
         run: tsc
         
