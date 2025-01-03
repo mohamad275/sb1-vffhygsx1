@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-require('ts-node/register'); // هذه السطر يسمح لـ Node.js بفهم TypeScript
+import 'ts-node/register'; 
 const { exportToPDF } = require('./src/utils/reports/pdfExporter.ts');
 import { format } from 'date-fns';
 import { ar } from 'date-fns/locale';
