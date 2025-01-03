@@ -31,8 +31,7 @@ jobs:
       - name: Install TypeScript and ts-node
         run: npm install typescript ts-node --save-dev
 
-      - name: Compile TypeScript
-        run: tsc
+      
         
       - name: Generate Daily Report
-        run: npm run generate-report
+        run: npx ts-node scripts/generate-report.js
